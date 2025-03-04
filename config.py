@@ -1,3 +1,3 @@
-HOST = "4.tcp.eu.ngrok.io"
-PORT = 10409
+HOST = "0.0.0.0"
+PORT = 5559
 MAX_USERS = 3

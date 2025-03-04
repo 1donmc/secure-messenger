@@ -32,13 +32,22 @@ class ChatClient:
         self.client.send(f"{self.username}:{self.password}".encode())
 
         response = self.client.recv(1024).decode()
+
         if response == "SERVER_FULL":
             messagebox.showerror("Error", "Server is full! Try again later.")
             self.client.close()
-            self.root.destroy()  # Properly close Tkinter
+            self.root.destroy()
             return
         elif response == "LOGIN_FAILED":
             messagebox.showerror("Error", "Invalid credentials!")
+            self.client.close()
+            self.root.destroy()
+            return
+        elif response == "LOGIN_SUCCESS":
+            messagebox.showinfo(
+                "Success", "Successfully connected to the server!")
+        else:
+            messagebox.showerror("Error", "Unexpected server response!")
             self.client.close()
             self.root.destroy()
             return
