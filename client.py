@@ -27,7 +27,7 @@ class ChatClient:
 
         # Connect to server
         self.client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.client.connect(("127.0.0.1", 5556))
+        self.client.connect((HOST, PORT))
 
         self.client.send(f"{self.username}:{self.password}".encode())
 
