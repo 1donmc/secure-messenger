@@ -4,4 +4,4 @@ cryptography==44.0.2
 plyer==2.1.0
 pycparser==2.22
 pygame==2.6.1
-pyobjus==1.2.3
+
